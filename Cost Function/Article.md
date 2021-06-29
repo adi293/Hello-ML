@@ -68,55 +68,52 @@ In the above figure, the first figure shows the distribution of malignant & non-
 
 Before we proceed to the next section, a small note– while learning ML, you may come across a similar term: the cost function. And there is a difference between a loss function and a cost function. The loss function calculates the loss (or wrongness) for a single example. Whereas the cost function calculates the average loss over the dataset on which the algorithm is trained. 
 
-Cost (hϴ(xi), yi) = 1mi=1mL (hϴ(xi), yi);  here, m represents the size of the training set.
+<h3><b>Cost(h<sub>&theta;</sub>(x<sub>i</sub>), y<sub>i</sub>) = &sum; L(h<sub>&theta;</sub>(x<sub>i</sub>), y<sub>i</sub>) / m</b></h3>  
+
+here, m represents the size of the training set.
 Though, in some places, you may find that both terms are used interchangeably.
 
 ## How do algorithms learn?
 
 For a given loss function, an algorithm learns by minimising loss at each iteration. Usually, finding the value of parameters for which the cost function attain its global minima is not that easy. So we rely on numerical optimization techniques like Newton-Rephson, Gradient descent, etc. Using these numerical techniques, we can find the values of model parameters at the local minima of the cost function. If the function is convex, the local minima will be the global minima.
+
 If you are new to numerical optimization methods, they are framed in the following way– We have an objective function that needs to be either minimized or maximized. Newton-Raphson or Gradient descent/ascent generate a sequence such that they will converge to the local minima/maxima in a deterministic way. While training a learning algorithm, the objective function is the cost function. For many learning algorithms, a globally continuous and differentiable cost function is desirable.
-Some standard loss functions
+
+## Some standard loss functions
+
 For regression-based problem, some common loss functions are-
-Mean square loss (or quadratic loss)
 
-L(yi, yi) =(yi-yi)2
-Cost (y, y) = 1mi=1m(yi-yi)2 
+### Mean square loss (or quadratic loss)
 
+> <p align="left">
+>   <img src="image5.png" width="800" title="hover text">
+> </p>
 
 It is the most commonly used in regression problems. One disadvantage it has is its tendency to be dominated by outliers.
 
-Mean absolute loss
+### Mean absolute loss
 
-L(yi, yi) =| yi-yi |
-Cost (y, y) = 1mi=1m| yi-yi | 
-
+> <p align="left">
+>   <img src="image6.png" width="800" title="hover text">
+> </p>
 
 Mean absolute loss is helpful when we know that the data might have a lot of outliers. A disadvantage is that it is not differentiable at mean, and except at mean, the gradient is the same. 
+
 For classification based problem– 
-Log loss or binary cross-entropy loss
 
-L(yi, h(xi)) =-yilog(h(xi)) 
-          -(1-yi)(1-log(h(xi)))
-Cost (y, y) =1mi=1mL(yi, h(xi)) 
+### Log loss or binary cross-entropy loss
 
-
+> <p align="left">
+>   <img src="image7.png" width="800" title="hover text">
+> </p>
 
 A generalized version of binary log-loss is known as Categorical cross-entropy loss. It is widely used for classification problem. You can interpret it as a negative log-likelihood.
 
-KL (Kullback Leibler) divergence loss (or entropy loss)
-KL(P || Q) = -SP(s)logQ(s)P(s)
-or 
-KL(P || Q) = -SP(s)logQ(s)P(s)
+### KL (Kullback Leibler) divergence loss (or entropy loss)
 
-
-
-For discrete case
-
-
-
-
-
-For continuous case
-
+> <p align="left">
+>   <img src="image8.png" width="800" title="hover text">
+> </p>
+> 
 Kl divergence quantifies the difference between two distribution (one of them is take). It is used in reinforcement learning as well. 
 
