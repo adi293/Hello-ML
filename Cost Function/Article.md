@@ -16,13 +16,11 @@ To explain this idea better, let's consider a toy example. We want to develop a 
 If you don't know the details of classification algorithms now, that's okay. Here our task (T) is predicting whether a tumour is malignant or not. Our algorithm is learning for the dataset of previous tests, so we will call it experience (E). And let's define the performance measure (P) as the ratio of correctly classified labels ("0" or "1"). This particular performance measure is called accuracy.
 To develop our classification algorithm, we will construct a hypothesis (a function which maps features to the desired range. Here, the hypothesis outputs a value in a range (0, 1))–
 
-![image](https://latex.codecogs.com/png.latex?%5Cdpi%7B120%7D%20%5Cbg_black%20%5Cfn_phv%20%5Clarge%20h_%7B%5Ctheta%7D%5Cbig%28features%20%3D%5C%7Bage%2C%20tumourSize%2C%20%5Cdots%5C%7D%29) ![image](https://latex.codecogs.com/png.latex?%5Cdpi%7B120%7D%20%5Cbg_black%20%5Cfn_phv%20%5Clarge%20%3D%20Sigmoid%5Cbig%28a_%7B0%7D&plus;a_%7B1%7D%20%5Ccdot%20age%20&plus;%20a_%7B2%7D%5Ccdot%20tumourSize%20&plus;%20%5Cdots%5Cbig%29)
-
+![Screenshot](image1.png)
+          
 Here, 
 
-![image](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbg_black%20%5Cfn_phv%20%5Clarge%20%5Ctheta%20%3D%20%5Cbig%28a_%7B0%7D%2C%20a%7B1%7D%2C%20%5Cdots%5Cbig%29%5E%7BT%7D)
-
-X represents the features data and ![image](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cbg_black%20%5Cfn_phv%20%5Clarge%20%5Cmathbf%7Bx%7D_%7Bi%7D%20%5Cin%20%5Cmathbf%7BX%7D)
+![Screenshot](image2.png)
 
 
 X = ( x1, x2, . . . )
